@@ -1,10 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Coffee Shop</title>
 </head>
+
 <body>
-   <button id="run-button">Run It!</button>
-   <script src="main.js"></script>
+    <div>
+        <h1>Beans</h1>
+        <button id="bean-run-button">View All Beans!</button>
+        <div id="bean-result"></div>
+
+        <section class="journal-input-container">
+            <section class="journal-input">
+                <h2 style="color: black;"><em>new bean</em></h2>
+                <article class="input-column">
+                    <form action="">
+                        <fieldset>
+                            <label for="beanName">Name</label>
+                            <textarea style="width: 5em" name="beanName" id="" cols="15" rows="1"></textarea>
+                        </fieldset>
+                    </form>
+                </article>
+                <article class="input-column">
+                    <form action="">
+                        <fieldset>
+                            <label for="region">Region</label>
+                            <textarea name="region" id="" cols="20" rows="1"></textarea>
+                        </fieldset>
+                    </form>
+                </article>
+                <article class="input-column">
+                    <form action="">
+                        <fieldset>
+                            <label for="beanNotes">Notes</label>
+                            <textarea name="beanNotes" id="" cols="40" rows="3"></textarea>
+                        </fieldset>
+                    </form>
+                </article>
+                <article class="input-column">
+                    <form action="">
+                        <article class="input-column">
+                            <input class="bean-record-button" id="bean-record-button" type="button" value="Add New Bean">
+                        </article>
+                    </form>
+                </article>
+            </section>
+        </section>
+    </div>
+
+    <div>
+        <h1>Coffee</h1>
+        <button id="coffee-run-button">View All Coffee!</button>
+        <div id="coffee-result"></div>
+    </div>
+
+    <script src="main.js"></script>
 </body>
+
 </html>
