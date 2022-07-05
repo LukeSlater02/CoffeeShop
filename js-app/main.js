@@ -28,7 +28,6 @@ document.querySelector(".bean-record-button").addEventListener("click", event =>
             Region: region,
             Notes: notes,
         }
-        console.log(variety);
         createBean(variety)
 
         document.querySelector("textarea[name='beanName']").value = ""
@@ -36,6 +35,31 @@ document.querySelector(".bean-record-button").addEventListener("click", event =>
         document.querySelector("textarea[name='beanNotes']").value = ""
     }
 })
+
+getAllBeanVarieties().then(bean => {
+    bean.forEach(b => {
+        document.querySelector("#coffeeBean").insertAdjacentHTML("beforeend", `<option value="${b.id}">${b.name}</option>`)
+    })
+})
+
+document.querySelector(".coffee-record-button").addEventListener("click", event => {
+    event.preventDefault()
+    if (event.target.id === "coffee-record-button") {
+        const title = document.querySelector("textarea[name='coffeeTitle']").value
+        const beanId = document.querySelector("#coffeeBean").value
+
+
+        const coffee = {
+            Title: title,
+            BeanVarietyId: parseInt(beanId),
+        }
+        createBean(coffee)
+
+        document.querySelector("textarea[name='coffeeTitle']").value = ""
+        document.querySelector("#coffeeBean").value = 0
+    }
+})
+
 
 const coffeeButton = document.querySelector("#coffee-run-button");
 coffeeButton.addEventListener("click", () => {
@@ -64,6 +88,17 @@ function createBean(bean)
             "Content-Type": "application/json"
         },
         body: JSON.stringify(bean)
+    }).then(res => res.json())
+}
+
+function createBean(coffee)
+{
+    return fetch(coffeeUrl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(coffee)
     }).then(res => res.json())
 }
 

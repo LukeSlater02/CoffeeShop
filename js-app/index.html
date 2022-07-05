@@ -11,7 +11,7 @@
         <button id="bean-run-button">View All Beans!</button>
         <div id="bean-result"></div>
 
-        <section class="journal-input-container">
+        <section style="width: 40%;" class="journal-input-container">
             <section class="journal-input">
                 <h2 style="color: black;"><em>new bean</em></h2>
                 <article class="input-column">
@@ -53,6 +53,37 @@
         <h1>Coffee</h1>
         <button id="coffee-run-button">View All Coffee!</button>
         <div id="coffee-result"></div>
+
+        <section style="width: 40%;" class="journal-input-container">
+            <section class="journal-input">
+                <h2 style="color: black;"><em>new coffee</em></h2>
+                <article class="input-column">
+                    <form action="">
+                        <fieldset>
+                            <label for=title">Title</label>
+                            <textarea style="width: 5em" name="coffeeTitle" id="" cols="15" rows="1"></textarea>
+                        </fieldset>
+                    </form>
+                </article>
+                <article class="input-column">
+                    <form action="">
+                        <fieldset>
+                            <label for="coffeeBean">Bean</label>
+                            <select style="width:13em" name="coffeeBean" id="coffeeBean">
+                                <option>---</option>
+                            </select>  
+                        </fieldset>
+                    </form>
+                </article>
+                <article class="input-column">
+                    <form action="">
+                        <article class="input-column">
+                            <input class="coffee-record-button" id="coffee-record-button" type="button" value="Add New Coffee">
+                        </article>
+                    </form>
+                </article>
+            </section>
+        </section>
     </div>
 
     <script src="main.js"></script>
